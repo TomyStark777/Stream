@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Intro section with dropdown navigation</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      height: 8vh;
+      padding-left: 5vw;
+      padding-right: 4vw;
+    }
+
+    .div1 h2 {
+      font-size: 40px;
+      font-weight: bolder;
+      margin: 0;
+      padding: 0;
+    }
+
+    .div1 li {
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
+
+    .div1,
+    .div2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+    }
+
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      list-style-type: none;
+      gap: 15px;
+      margin: 0;
+    }
+
+    ul li img {
+      margin-left: 5px;
+    }
+
+    .container {
+      display: flex;
+      gap: 3vw;
+      margin: 5vh auto;
+      justify-content: center;
+    }
+
+    .pattern img {
+      width: 25vw;
+    }
+
+    body {
+      font-family: sans-serif;
+
+    }
+
+
+    .texte p {
+      width: 20vw;
+      font-size: 14px;
+      font-weight: 700;
+      color: hsl(0, 0%, 41%);
+      width: 25vw;
+      letter-spacing: 1px;
+      line-height: 2.8vh;
+
+    }
+
+    .texte h1 {
+      font-size: 70px;
+      font-weight: 700;
+      line-height: 9vh;
+      letter-spacing: 3px;
+    }
+
+    .texte {
+      padding-top: 10vh;
+    }
+
+    li a button {
+      background-color: #fff;
+      color: black;
+      padding: 12px 20px;
+      border: 2px solid black;
+      border-radius: 15px;
+      font-size: 16px;
+      font-weight: lighter;
+    }
+
+    .texte button{
+      color: white;
+      background-color: black;
+      border-radius: 10px;
+      border: none;
+      padding: 13px 20px;
+      font-weight: bold;
+      font-size: 16px;
+      margin-top: 3vh;
+    }
+
+    a{
+      text-decoration: none;
+      color: black;
+    }
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+  <script defer>
+    
+  </script>
+</head>
+
+<body>
+
+  <nav>
+
+    <div class="div1">
+      <h2>snap</h2>
+      <ul>
+        <li>Features <img src="./images/icon-arrow-down.svg" alt=""><img src="./images/icon-arrow-up.svg" alt=""
+            style="display: none;"></li>
+        <li>Company <img src="./images/icon-arrow-down.svg" alt=""><img src="./images/icon-arrow-up.svg" alt=""
+            style="display: none;"></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </div>
+
+    <div class="div2">
+      <ul>
+        <li><a href="#">Login</a></li>
+        <li><a href="#"><button>Register</button></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <div class="texte">
+      <h1>Make <br>remote work</h1>
+      <p> Get your team in sync, no matter your location. Streamline processes,
+        create team rituals, and watch productivity soar.</p>
+
+      <button>Learn more</button>
+    </div>
+    <div class="pattern">
+      <img src="./images/image-hero-desktop.png" alt="">
+    </div>
+
+  </div>
+
+
+
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Tomy Stark</a>.
+  </div>
+</body>
+
+</html>

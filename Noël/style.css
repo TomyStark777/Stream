@@ -1,0 +1,137 @@
+@font-face {
+    font-family: "Christmas";
+    src: url(LastChristmas.otf);
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(darren.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    font-family: "Christmas";
+    text-align: center;
+    transition: background-color 1s ease-in-out;
+    overflow: hidden;
+
+    /* Animation */
+    animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+h2{
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+h1{
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.circle{
+    width: 35vh;
+    height: 35vh;
+    border-radius: 50%;
+    background-color: red;
+    margin: 10px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease-in-out;
+    box-shadow: inset 0 0 5px rgb(86, 29, 29);
+    animation: pulsate 10s infinite;
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.circle:hover{
+    transform: scale(1.1);
+}
+
+.circle::before{
+    content: "";
+    display: block;
+    width: 38vh;
+    height: 38vh;
+    border-radius: 50%;
+    background-color: transparent;
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    box-shadow: inset 0 0 5px rgb(86, 29, 29);
+    cursor: pointer;
+}
+
+@keyframes pulsate {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.container canvas{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow-y: visible;
+    pointer-events: none;
+}
+
+input{
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px;
+    border: 2px solid lightblue;
+    outline: none;
+    transition: background-color 0.3s ease-in-out;
+    box-shadow: inset 0 0 1px rgb(29, 67, 86);
+
+}
+
+#getName{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#ok{
+    margin-top: 10px;
+    padding: 10px;
+    width: 100px;
+    border-radius: 5px;
+    background-image: linear-gradient(rgb(184, 104, 104),rgb(83, 158, 83));
+    outline: none;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+    color: white;
+    border: none;
+}
