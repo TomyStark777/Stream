@@ -2,12 +2,13 @@
     font-family: "Christmas";
     src: url(LastChristmas.otf);
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
 }
 
-body{
+body {
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -30,21 +31,20 @@ body{
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
 }
 
-h2{
+h2 {
     font-size: 48px;
     margin-bottom: 10px;
 }
 
-h1{
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
 
-.circle{
+
+.circle {
     width: 35vh;
     height: 35vh;
     border-radius: 50%;
@@ -63,18 +63,18 @@ h1{
     transform: translate(-50%, -50%);
 }
 
-.circle:hover{
+.circle:hover {
     transform: scale(1.1);
 }
 
-.circle::before{
+.circle::before {
     content: "";
     display: block;
     width: 38vh;
     height: 38vh;
     border-radius: 50%;
     background-color: transparent;
-    position: absolute; 
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -87,24 +87,27 @@ h1{
     0% {
         transform: translate(-50%, -50%) scale(1);
     }
+
     50% {
         transform: translate(-50%, -50%) scale(1.1);
     }
+
     100% {
         transform: translate(-50%, -50%) scale(1);
     }
 }
 
-.container canvas{
-    position:absolute;
+.container canvas {
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     overflow-y: visible;
     pointer-events: none;
+    transition: color 1s;
 }
 
-input{
+input {
     margin-bottom: 10px;
     padding: 10px;
     width: 200px;
@@ -116,22 +119,67 @@ input{
 
 }
 
-#getName{
+#getName {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
 
-#ok{
+#ok {
     margin-top: 10px;
     padding: 10px;
     width: 100px;
     border-radius: 5px;
-    background-image: linear-gradient(rgb(184, 104, 104),rgb(83, 158, 83));
+    background-image: linear-gradient(rgb(184, 104, 104), rgb(83, 158, 83));
     outline: none;
     transition: background-color 0.3s ease-in-out;
     cursor: pointer;
     color: white;
     border: none;
+}
+
+#message h1 {
+    font-size: 8.5vmin;
+    animation: blink 10s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: .5;
+    }
+}
+
+
+#message {
+    perspective: 1000px;
+    /* Ajoute une perspective pour améliorer l'effet 3D */
+}
+
+@keyframes rotateMove {
+    0% {
+        transform: rotate(0deg) translate(0, 0);
+    }
+
+    25% {
+        transform: rotate(90deg) translate(100px, 0);
+    }
+
+    50% {
+        transform: rotate(0deg) translate(100px, 100px);
+    }
+
+    75% {
+        transform: rotate(-90deg) translate(0, 100px);
+    }
+
+    100% {
+        transform: rotate(0deg) translate(0, 0);
+    }
+}
+
+.container {
+    transition: font-size 1s, color 1s;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+
 }
