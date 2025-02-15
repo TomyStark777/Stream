@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demande en Cours de Traitement !</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            background-image: linear-gradient(to left top, skyblue, aliceblue);
+            background-attachment: fixed;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 50vw;
+            background-color: #f2f2f2;
+            padding-bottom: 1.5em;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 3em;
+        }
+
+        p {
+            display: flex;
+            font-size: 1em;
+            width: 70%;
+            align-items: center;
+            justify-content: space-around;
+            text-align: justify;
+            gap: 10px;
+        }
+
+        img {
+            width: 20%;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+            outline: none;
+            transition: background-image 0.7s ease-in-out;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        .options{
+            display: flex;
+            gap: 15px;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+            @media (max-width: 600px) {
+                h1 {
+                    font-size: 2em;
+                }
+
+                p {
+                    font-size: 1em;
+                }
+
+            }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Traitement de la Demande</h1>
+        <p><img src="../image/mark.png" alt="">Votre demande vient d'être envoyée à un administrateur. <br>Après
+            controle des informations que vous avez fourni,<br>le livre que vous avez proposé sera ajouter à la
+            Bibliothèque.<br><br>Merci pour votre Apport !
+        </p>
+        <div class="options">
+            <a href="../Accueil/index.php"><button>Retour à la page d'Accueil</button></a>
+            <a href="../addBook/adbook.php"><button>Ajouter un autre Livre</button></a>
+        </div>
+    </div>
+</body>
+
+</html>
