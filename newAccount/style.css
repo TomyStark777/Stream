@@ -1,0 +1,210 @@
+@font-face {
+    font-family: 'Finger Printed';
+    src: url(../Fonts/Finger\ Printed.ttf);
+}
+
+@font-face {
+    font-family: 'Bring Race';
+    src: url(../Fonts/Bring\ Race.otf);
+}
+
+body{
+    background: linear-gradient(to left top,skyblue,aliceblue);
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+nav ul{
+    display: flex;
+    gap: 15px;
+    list-style-type: none;
+    width: 70%;
+    width: fit-content;
+}
+
+nav ul li{
+    display: flex;
+}
+
+
+.titre{
+    font-family: 'Finger Printed';
+    font-size: 35px;
+    color: rgba(101, 217, 255, 0.764);
+}
+
+h2{
+    font-size: 35px;
+    
+}
+
+.formulaire{
+    background: white;
+    box-shadow: 2px 3px 30px 5px rgba(0, 0, 0, 0.073);
+    border: 0 auto;
+    width: 35vw;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 5px 20px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+form button{
+    width: 70%;
+    color: aliceblue;
+    font-weight: 700;
+    font-size: 18px;
+    height: 6vh;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(to right bottom,rgb(29, 29, 254),rgb(115, 26, 239));
+}
+
+
+
+input{
+    height: 5vh;
+    width: 90%;
+    outline: none;
+    border: 5px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding-left: 10px;
+    background: #fff;
+}
+
+input:focus{
+    background: #fff;
+}
+@font-face {
+    font-family: 'Finger Printed';
+    src: url(../Fonts/Finger\ Printed.ttf);
+}
+
+@font-face {
+    font-family: 'Bring Race';
+    src: url(../Fonts/Bring\ Race.otf);
+}
+
+body{
+    background: linear-gradient(to left top,skyblue,aliceblue);
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+nav ul{
+    display: flex;
+    gap: 15px;
+    list-style-type: none;
+    width: 70%;
+    width: fit-content;
+}
+
+nav ul li{
+    display: flex;
+}
+
+
+.titre{
+    font-family: 'Finger Printed';
+    font-size: 35px;
+    color: rgba(101, 217, 255, 0.764);
+}
+
+h2{
+    font-size: 35px;
+    
+}
+
+.formulaire{
+    background: white;
+    box-shadow: 2px 3px 30px 5px rgba(0, 0, 0, 0.073);
+    border: 0 auto;
+    width: 35vw;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 5px 20px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+form button{
+    width: 70%;
+    color: aliceblue;
+    font-weight: 700;
+    font-size: 18px;
+    height: 6vh;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(to right bottom,rgb(29, 29, 254),rgb(115, 26, 239));
+}
+
+
+
+input{
+    height: 5vh;
+    width: 90%;
+    outline: none;
+    border: 5px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding-left: 10px;
+    background: #fff;
+}
+
+input:focus{
+    background: #fff;
+}
