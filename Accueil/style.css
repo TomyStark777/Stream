@@ -19,78 +19,92 @@
 }
 
 body {
-  background: linear-gradient(to left top, skyblue, aliceblue);
+  background: aliceblue;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: contain;
   padding: 0;
   margin: 0;
-  overflow-x: hidden;
 }
 
 nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 20px;
-  box-sizing: border-box;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: "AlteRegular";
+    margin: 0;
+    border: 2px solid yellow;
 }
 
-nav ul {
-  display: flex;
-  gap: 15px;
-  list-style-type: none;
-  width: 70%;
-  width: fit-content;
-}
-
-nav ul li {
-  display: flex;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: aliceblue;
-  font-family: "AlteBold";
-  font-size: 1em;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-}
-
-.titre {
-  font-family: "Finger Printed";
-  font-size: 35px;
-  color: rgba(101, 217, 255, 0.764);
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-  -webkit-user-select: none;
+nav .titre {
+    font-size: 1.5em;
+    color: #fff;
+    font-family: "Finger Printed";
+    user-select: none;
 }
 
 input[type="search"] {
-  width: 30vw;
-  height: 5vmin;
-  border-radius: 10px;
-  border: 1px solid grey;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.567);
-  padding-left: 10px;
-  background: #75747447;
-  color: aliceblue;
-  outline: none;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(237, 246, 254);
+    color: rgb(53, 58, 61);
+    outline: none;
+    width: 25vw;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.837);
 }
 
 input[type="search"]::placeholder {
-  color: aliceblue;
-  font-style: italic;
-  font-weight: 700;
+    color: #bbb;
 }
 
-.container ul {
-  list-style-type: disc;
+nav div ul {
+    display: flex;
+    list-style-type: none !important;
+    margin: 0;
+    padding: 0;
+    border: 2px solid red;
 }
 
-.icon-search {
-  position: relative;
-  height: 3.5vh;
-  right: 10%;
-  width: 50px;
+nav ul li {
+    margin-left: 20px; 
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #0056b3;
+    border-radius: 5px;
+}
+
+/* Bannière de bienvenue */
+.bienvenue {
+    text-align: center;
+    border: 2px solid red;
+}
+
+.bienvenue h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+    border: 2px solid green;
+}
+
+.bienvenue p {
+    font-size: 1.2em;
+    color: #666;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: auto;
+    border: 2px solid blue;
 }
 
 #recherche {
@@ -107,8 +121,6 @@ input[type="search"]::placeholder {
   align-items: center;
   justify-content: space-around;  
 }
-
-
 
 .buttons {
   display: flex;
@@ -180,10 +192,12 @@ input[type="search"]::placeholder {
 }
 
 .bienvenue {
-  background-image: url(../image/inaki-del-olmo-NIJuEQw0RKg-unsplash.jpg);
+  background-image: url(../image/francesco-alberti-zxCLRCS4I6s-unsplash.jpg);
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
+  background-position: center;
+  height: 90vh;
 }
 
 .text {
@@ -202,7 +216,7 @@ input[type="search"]::placeholder {
 
 h1{
   font-size: 2em;
-  color: aliceblue;
+  color: rgb(37, 34, 86);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   font-family: "AlteBold";
   margin-left: 20px;
@@ -211,5 +225,4 @@ h1{
 .text p {
   width: 50%;
 }
-
 

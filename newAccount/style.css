@@ -11,7 +11,10 @@
 body{
     background: linear-gradient(to left top,skyblue,aliceblue);
     background-repeat: no-repeat;
+<<<<<<< HEAD
     background-attachment: fixed;
+=======
+>>>>>>> b1d702b5e6e4b3e946c13cddbc15d6a5efdfe36d
     background-size: contain;
     padding: 0;
     margin: 0;

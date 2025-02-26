@@ -22,13 +22,11 @@ include "../config/db.php";
 
         <div class="bienvenue">
             <nav>
-                <div class="titre">STREAM</div>
-                <form action="index.php" method="get" class="search">
-                    <input type="search" onkeydown="searchKeyWord()" name="keyword" id="search" placeholder="Rechercher un livre">
-                </form>
-                <div style="display: flex;width:fit-content;;align-items:center;justify-content:right;padding: 0 10px 0 10px;font-weight: 700;">
+                <div class="titre" id="titre">STREAM</div>
+                <input type="search" onkeydown="searchKeyWord()" name="keyword" id="search" placeholder="Rechercher un livre">
+                <div style="display: flex;width:fit-content;align-items:center;justify-content:right;padding: 0 10px 0 10px;font-weight: 700;">
                     <ul>
-                        <li><a href="../addBook/adbook.php">Ajouter un Livre</a></li>
+                        <li><a href="../addBook/adbook.php"><button id="add">Ajouter un Livre</button></a></li>
                         <li><a href="informations.php">À Propos</a></li>
                         <li><a href="mailto:timotheeklaus@gmail.com">Contactez-nous</a></li>
                     </ul>
@@ -36,19 +34,23 @@ include "../config/db.php";
             </nav>
             <div class="text">
                 <h1>Bienvenue dans notre bibliothèque</h1>
-                <p style="width: 50vw;margin: 0 auto;font-family: serif;font-size: .8em;">Plongez dans un océan de connaissance et d'histoires passionnantes<br>Découvrez notre connexion de livres soigneusement selectionnés et enrichissez votre esprits<br>
-                    Rejoignez-nous dans cette aventure littéraire et laissez chaque page tournée vous emmener vers de nouveaux horizons</p>
+                <div>
+                    <img src="" alt="">
+                    <p style="width: 50vw;margin: 0 auto;font-family: serif;font-size: .8em;">Plongez dans un océan de connaissance et d'histoires passionnantes<br>Découvrez notre collection de livres soigneusement selectionnés et enrichissez votre esprits<br>
+                        Rejoignez-nous dans cette aventure littéraire et laissez chaque page tournée vous emmener vers de nouveaux horizons</p>
+                </div>
+
             </div>
         </div>
         <?php
-            if (isset($_GET['keyword']) && $_GET['keyword'] != '') {
-                $keyword = $_GET['keyword'];
-                $req = $database->prepare('SELECT * FROM livre WHERE LOWER(titre_livre) LIKE LOWER(:keyword)');
-                $req->execute(array(":keyword" => '%' . $keyword . '%'));
-                while ($livre = $req->fetch()) {
-                    echo $livre['titre_livre'] . '<br>';
-                }
+        if (isset($_GET['keyword']) && $_GET['keyword'] != '') {
+            $keyword = $_GET['keyword'];
+            $req = $database->prepare('SELECT * FROM livre WHERE LOWER(titre_livre) LIKE LOWER(:keyword)');
+            $req->execute(array(":keyword" => '%' . $keyword . '%'));
+            while ($livre = $req->fetch()) {
+                echo $livre['titre_livre'] . '<br>';
             }
+        }
         ?>
         <h1>Disponibles</h1>
         <div class="disponible">
@@ -179,11 +181,14 @@ include "../config/db.php";
         <script>
             async function searchKeyWord() {
                 let keyword = document.getElementById("search").value;
-                console.log(keyword);
 
                 const req = await fetch(`search.php?keyword=${keyword}`);
                 const response = await req.json();
-                console.log(response);
+
+                //Afficher la reponse au format json sur la page
+
+
+
             }
         </script>
 

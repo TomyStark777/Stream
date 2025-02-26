@@ -14,7 +14,7 @@
         <div class="titre">STREAM</div>
         <div style="display: flex;width:fit-content;;align-items:center;justify-content:right;padding: 0 10px 0 10px;font-weight: 700;">
             <ul>
-                <li>Pas de compte ?&nbsp;<a href="../newAccount/newAccount.php">Créez un compte</a></li>
+                <li><a href="../newAccount/help.html">Besoin d'aide ?</a></li>
                 <li><a href="informations.php">À Propos</a></li>
                 <li><a href="mailto:timotheeklaus@gmail.com">Contactez-nous</a></li>
             </ul>
