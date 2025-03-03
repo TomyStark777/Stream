@@ -23,8 +23,23 @@ include "../config/db.php";
         <div class="bienvenue">
             <nav>
                 <div class="titre" id="titre">STREAM</div>
-                <input type="search" onkeydown="searchKeyWord()" name="keyword" id="search" placeholder="Rechercher un livre">
+                <form action="" method="get"></form>
+                    <input type="search" onkeydown="searchKeyWord()" name="keyword" id="search" placeholder="Rechercher un livre">
+                </form>
                 <div style="display: flex;width:fit-content;align-items:center;justify-content:right;padding: 0 10px 0 10px;font-weight: 700;">
+                    <script>
+                        async function searchKeyWord() {
+                            let keyword = document.getElementById("search").value;
+                            let div = document.getElementById("disponible")
+                            const req = await fetch(`search.php?keyword=${keyword}`);
+                            const response = await req.json();
+
+                            div.innerText(response)
+
+                            //Afficher la reponse au format 
+
+                        }
+                    </script>
                     <ul>
                         <li><a href="../addBook/adbook.php"><button id="add">Ajouter un Livre</button></a></li>
                         <li><a href="informations.php">À Propos</a></li>
@@ -178,19 +193,6 @@ include "../config/db.php";
         <!-- il faut que je rajoute d'autres catégorie plus tard -->
 
 
-        <script>
-            async function searchKeyWord() {
-                let keyword = document.getElementById("search").value;
-
-                const req = await fetch(`search.php?keyword=${keyword}`);
-                const response = await req.json();
-
-                //Afficher la reponse au format json sur la page
-
-
-
-            }
-        </script>
 
 </body>
 
