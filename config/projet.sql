@@ -8,7 +8,8 @@ CREATE TABLE Carte_biblio(
 
 --- cration de la table gestionnaire abonnée ---
 CREATE TABLE abonnee(
-    nom VARCHAR(50) PRIMARY KEY,
+    id_abonnee SERIAL PRIMARY KEY,
+    nom VARCHAR(50) NOT NULL,
     prenom VARCHAR(50) NOT NULL,
     email VARCHAR(50) NOT NULL,
     password VARCHAR(50) NOT NULL,
@@ -41,8 +42,7 @@ CREATE TABLE Emprunteur(
     matricul_biblio INT NOT NULL,
     id_fich INT NOT NULL,
     num_biblio INT NOT NULL,
-    nom VARCHAR(50) NOT NULL
-    
+    id_abonnee INT NOT NULL
 );
 
 --- Auteur ---
@@ -119,20 +119,20 @@ CREATE INDEX idx_emprunteur_id_fiche ON emprunteur (id_fich);
 
 -- Relations
 ALTER TABLE Emprunteur
-ADD CONSTRAINT fk_votre_table_bibliothecaire
+ADD CONSTRAINT fk_bibliothecaire
 FOREIGN KEY (matricul_biblio) REFERENCES bibliothecaire(matricul_biblio);
 
 ALTER TABLE Emprunteur
-ADD CONSTRAINT fk_votre_table_fiche_adhesion
+ADD CONSTRAINT fk_fiche_adhesion
 FOREIGN KEY (id_fich) REFERENCES fiche_adhesion(id_fich);
 
 ALTER TABLE Emprunteur
-ADD CONSTRAINT fk_votre_table_carte_biblio
+ADD CONSTRAINT fk_carte_biblio
 FOREIGN KEY (num_biblio) REFERENCES carte_biblio(num_biblio);
 
 ALTER TABLE Emprunteur
-ADD CONSTRAINT fk_votre_table_ionnaire_abonnee
-FOREIGN KEY (nom) REFERENCES abonnee(nom);
+ADD CONSTRAINT fk_abonnee
+FOREIGN KEY (id_abonnee) REFERENCES abonnee(id_abonnee);
 
 ALTER TABLE concerne
 ADD CONSTRAINT fk_concerne_livre
@@ -193,12 +193,12 @@ INSERT INTO bibliothecaire (matricul_biblio, nom_biblio, prenom_biblio, sexe_bib
 (5, 'Simon', 'Pierre', 'Homme');
 
 -- Insertions dans la table Emprunteur
-INSERT INTO emprunteur (id_emprunt, nom_emprunt, prenom_emprunt, sexe_emprunt, adresse_emprunt, tel_emprunteur, matricul_biblio, id_fich, num_biblio, nom) VALUES
-(1, 'Smith', 'John', 'Homme', '789 Rue Exemple', '123456789', 1, 1, 1, 'Durand'),
-(2, 'Doe', 'Jane', 'Femme', '101 Rue Exemple', '987654321', 2, 2, 2, 'Martin'),
-(3, 'Brown', 'Charlie', 'Homme', '202 Rue Exemple', '345678901', 3, 3, 3, 'Dupont'),
-(4, 'White', 'Alice', 'Femme', '303 Rue Exemple', '456789012', 4, 4, 4, 'Petit'),
-(5, 'Black', 'Eve', 'Femme', '404 Rue Exemple', '567890123', 5, 5, 5, 'Lefevre');
+INSERT INTO emprunteur (id_emprunt, nom_emprunt, prenom_emprunt, sexe_emprunt, adresse_emprunt, tel_emprunteur, matricul_biblio, id_fich, num_biblio, id_abonnee) VALUES
+(1, 'Smith', 'John', 'Homme', '789 Rue Exemple', '123456789', 1, 1, 1, 1),
+(2, 'Doe', 'Jane', 'Femme', '101 Rue Exemple', '987654321', 2, 2, 2, 2),
+(3, 'Brown', 'Charlie', 'Homme', '202 Rue Exemple', '345678901', 3, 3, 3,3),
+(4, 'White', 'Alice', 'Femme', '303 Rue Exemple', '456789012', 4, 4, 4, 4),
+(5, 'Black', 'Eve', 'Femme', '404 Rue Exemple', '567890123', 5, 5, 5, 5);
 
 INSERT INTO auteur (id_auteur, nom_auteur, prenom_auteur, date_naiss_auteur, nationalite_auteur) VALUES
 (1, 'Beauchemin', 'Jean-François', '1950-04-05', 'Française'),  -- Auteur de "Le Jour des Corneilles"
@@ -269,7 +269,7 @@ INSERT INTO livre (id_livre, titre_livre, annee, isbn, langue_livre, id_auteur, 
 (11, 'L''Archipel du Chien', 2025, 9780199535675, 'Français', 11, 1, 'https://example.com/download11', '../image/l-archipel-du-chien.jpg', 'Une réflexion poignante sur l''humanité et l''isolement. À travers une série d''événements bouleversants, l''auteur questionne la nature humaine et la moralité.'),
 (12, 'Leurs Enfants après Eux', 2023, 9780679736363, 'Français', 12, 1, 'https://example.com/download12', '../image/leurs-enfants-apres-eux.jpg', 'Un roman captivant sur le passage à l''âge adulte dans une petite ville française. À travers les yeux des adolescents, l''auteur explore les rêves et les désillusions de la jeunesse.'),
 (13, 'Les Déracinés', 2024, 9780142437223, 'Français', 13, 9, 'https://example.com/download13', '../image/les-deracines.jpg', 'Une saga familiale traversant les époques et les continents. Le roman retrace les vies entrelacées de plusieurs générations, marquées par l''exil et les défis identitaires.'),
-(14, 'La Tresse', 2022, 9780374528379, 'Français', 14, 8, 'https://example.com/download14', 'Trois femmes, trois continents, une lutte commune pour la liberté. Chacune d''elles, confrontée à des obstacles insurmontables, trouve la force de changer sa destinée.'),
+(14, 'La Tresse', 2022, 9780374528379, 'Français', 14, 8, 'https://example.com/download14', '../image/la-tresse.jpg','Trois femmes, trois continents, une lutte commune pour la liberté. Chacune d''elles, confrontée à des obstacles insurmontables, trouve la force de changer sa destinée.'),
 (15, 'L''Homme qui ment', 2023, 9780143035008, 'Français', 15, 1, 'https://example.com/download15', '../image/l-homme-qui-ment.jpg', 'Un drame psychologique sur les secrets et les mensonges. À travers une narration complexe, le roman dévoile les manipulations et les tromperies des personnages.'),
 (16, 'Changer l''eau des fleurs', 2025, 9780060934345, 'Français', 16, 1, 'https://example.com/download16', '../image/changer-l-eau-des-fleurs.jpg', 'Un roman émouvant sur le deuil et la résilience. L''héroïne, gardienne de cimetière, trouve des réponses à ses questions existentielles à travers les histoires des défunts.'),
 (17, 'La Disparition de Stéphanie Mailer', 2023, 9780140449266, 'Français', 17, 3, 'https://example.com/download17', '../image/la-disparition-de-stephanie-mailer.jpg', 'Un thriller haletant sur une enquête non résolue. Les enquêteurs, déterminés à découvrir la vérité, se retrouvent plongés dans un labyrinthe de mensonges et de trahisons.'),

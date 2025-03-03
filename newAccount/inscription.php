@@ -63,13 +63,13 @@
     $nom = $_POST['nom'];
     $prenom = $_POST['prenom'];
     $email = $_POST['email'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $password = $_POST['password'];
     $pays = $_POST['pays'];
     $tel = $_POST['tel'];
     
 
-    $req = $database->query('SELECT email FROM abonnee');
 
+    $req = $database->query('SELECT email FROM abonnee');
     while ($dbEmail = $req->fetch()) {
         if ($dbEmail['email'] === $email) {
             header('Location: newAccount.php?user=true');
