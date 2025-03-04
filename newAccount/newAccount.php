@@ -41,7 +41,7 @@
                     <input type="password" name="password" id="password" placeholder="Mot de Passe" required>
                     <div style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
                         <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirmez votre mot de Passe" required>
-                        <span id="erreurCode" style="color: red; display: none; font-size: 10px; text-align: left;margin: 0; width: 90%;">Les mots de passe ne correspondent pas</span>
+                        <span id="erreurCode" style="display: none; font-size: 12px; text-align: left;margin: 0; width: 90%;"></span>
                     </div>
                     <input type="number" name="tel" id="tel" placeholder="Numéro de Téléphone" required>
                     <select name="pays" id="liste-pays" required>
@@ -60,8 +60,10 @@
                             let erreurCode = document.getElementById("erreurCode");
 
                             if (password !== confirmPassword) {
-                                submitButton.style.backgroundColor = "gray";
+                                submitButton.style.background = "gray";
                                 submitButton.disabled = true;
+                                erreurCode.style.color = "red";
+                                erreurCode.innerText = "Les mots de passes ne correspondent pas";
                                 erreurCode.style.display = "flex";
                             } else {
                                 submitButton.style.background = "linear-gradient(to right bottom,rgb(29, 29, 254),rgb(115, 26, 239))";

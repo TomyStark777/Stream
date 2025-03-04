@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['pdf']) && $_FILES['p
 
         // Destinataires
         $mail->setFrom('koumondjitimotheeklaus@gmail.com', 'STREAM');
-        $mail->addAddress('richardtchassema1@gmail.com', 'Richard TCHASSEMA');
+        $mail->addAddress('bilap94695@arinuse.com', 'Richard TCHASSEMA');
 
         // Contenu
         $mail->isHTML(true);
@@ -87,7 +87,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['pdf']) && $_FILES['p
             th {
                 background-color: #f4f4f4;
             }
-        </style>
+
+            .buttons{
+                display: flex;
+                gap: 15px;
+                justify-content: space-around;
+                margin-top: 20px;
+            }
+            
+            button{
+                padding: 10px;
+                color: aliceblue;
+                font-weight: 700;
+                font-size: 18px;
+                height: 6vh;
+                border: none;
+                border-radius: 10px;
+                background: linear-gradient(to right bottom,rgb(29, 29, 254),rgb(115, 26, 239));
+            }
+            </style>
     </head>
 
     <body>
@@ -141,7 +159,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['pdf']) && $_FILES['p
                     </tbody>
                 </table>
             </div> <br><br><br>
-            <p><b>Description :</b> ".$resume."<p/>
+            <p><b>Description :</b> ".$resume. "<p/><br>
+            <div class=\"buttons\">
+                <a href=\"localhost/web/Stream/ajout.php?accept=true\"><button>Accepter la demande</button></a>
+                <a href=\"localhost/web/Stream/ajout.php\"><button>Modifier les informations</button></a>
+            <div>
         </div>
     </body>
 
@@ -162,5 +184,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['pdf']) && $_FILES['p
 } else{
     die("<br/><font color='red'>Veuillez sélectionner un fichier pour l'ajout sur Stream.</font>");
 }
-
-?>

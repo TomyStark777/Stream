@@ -32,10 +32,11 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 12px;
-    border-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-family: "AlteRegular";
-    margin: 0;
+    background-color: #0056b3 !important;
 }
 
 nav .titre {
@@ -84,6 +85,7 @@ nav div ul li a:hover {
 /* Bannière de bienvenue */
 .bienvenue {
     text-align: center;
+    height: 100vh;
 }
 
 .bienvenue h1 {
@@ -94,7 +96,7 @@ nav div ul li a:hover {
 
 .bienvenue p {
     font-size: 1.2em;
-    color: #666;
+    color: #543e2c;
     line-height: 1.6;
     max-width: 800px;
     margin: auto;
@@ -184,19 +186,9 @@ nav div ul li a:hover {
   display: none;
 }
 
-.bienvenue {
-  background-image: url(../image/francesco-alberti-zxCLRCS4I6s-unsplash.jpg);
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-size: cover;
-  background-position: center;
-  height: 90vh;
-}
 
 .text {
-  margin-top: 10%;
-  margin-left: 0;
-  margin-right: 0;
+  margin-top: 5%;
   height: 40vh;
   text-shadow: 1px 1px 1px rgba(19, 19, 19, 0.7);
   color: aliceblue;
@@ -209,14 +201,29 @@ nav div ul li a:hover {
 
 h1{
   font-size: 2em;
-  color: rgb(37, 34, 86);
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  color: rgb(255, 255, 255);
+  text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.5);
   font-family: "AlteBold";
   margin-left: 20px;
 }
 
 .text p {
   width: 50%;
+}
+
+.titre1{
+  background-image: url(../Image/3614.jpg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: 1px solid rgb(76, 74, 74);
+  width: 33.8vw;
+  margin: 0 auto;
+  margin-bottom: 5%;
+  border-radius: 10px;
 }
 
 #add{

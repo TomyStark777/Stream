@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajouter un Livre !</title>
     <link rel="stylesheet" href="style.css">
+    <script src="../config/titre.js" defer></script>
 </head>
 
 <body>

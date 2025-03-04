@@ -23,21 +23,15 @@ include "../config/db.php";
         <div class="bienvenue">
             <nav>
                 <div class="titre" id="titre">STREAM</div>
-                <form action="" method="get"></form>
-                    <input type="search" onkeydown="searchKeyWord()" name="keyword" id="search" placeholder="Rechercher un livre">
+                <form action="search.php" method="get"></form>
+                <input type="search" keydown="searchKeyWord()" name="keyword" id="search" placeholder="Rechercher un livre">
                 </form>
                 <div style="display: flex;width:fit-content;align-items:center;justify-content:right;padding: 0 10px 0 10px;font-weight: 700;">
                     <script>
                         async function searchKeyWord() {
                             let keyword = document.getElementById("search").value;
                             let div = document.getElementById("disponible")
-                            const req = await fetch(`search.php?keyword=${keyword}`);
-                            const response = await req.json();
-
-                            div.innerText(response)
-
-                            //Afficher la reponse au format 
-
+                            window.location.replace('index.php?keyword=' + keyword);
                         }
                     </script>
                     <ul>
@@ -48,26 +42,31 @@ include "../config/db.php";
                 </div>
             </nav>
             <div class="text">
-                <h1>Bienvenue dans notre bibliothèque</h1>
-                <div>
-                    <img src="" alt="">
-                    <p style="width: 50vw;margin: 0 auto;font-family: serif;font-size: .8em;">Plongez dans un océan de connaissance et d'histoires passionnantes<br>Découvrez notre collection de livres soigneusement selectionnés et enrichissez votre esprits<br>
-                        Rejoignez-nous dans cette aventure littéraire et laissez chaque page tournée vous emmener vers de nouveaux horizons</p>
-                </div>
 
+                <div style="display: flex; gap: 5px;align-items: center;justify-content: center;">
+
+                    <p style="width: 35vw;font-family: serif;font-size: .9em;text-align: justify; display: flex;flex-direction: column;gap: 15px;">
+                        <span>🔹 Plongez dans un océan de connaissance et d'histoires passionnantes</span>
+                        <span>🔹 Découvrez notre collection de livres soigneusement selectionnés et enrichissez votre esprits</span>
+                        <span>🔹 Rejoignez-nous dans cette aventure littéraire et laissez chaque page tournée vous emmener vers de nouveaux horizons</span>
+                    </p>
+                    <img src="../image/19198444-removebg-preview.png" alt="">
+
+                </div>
+                <h1>Bienvenue dans notre bibliothèque</h1>
             </div>
         </div>
         <?php
         if (isset($_GET['keyword']) && $_GET['keyword'] != '') {
             $keyword = $_GET['keyword'];
-            $req = $database->prepare('SELECT * FROM livre WHERE LOWER(titre_livre) LIKE LOWER(:keyword)');
+            $req = $database->prepare('SELECT * FROM livre WHERE LOWER(titre_livre) LIKE LOWER(:keyword) OR LOWER(description) LIKE LOWER(:keyword)');
             $req->execute(array(":keyword" => '%' . $keyword . '%'));
             while ($livre = $req->fetch()) {
                 echo $livre['titre_livre'] . '<br>';
             }
         }
         ?>
-        <h1>Disponibles</h1>
+        <h1 class="titre1">Livres Disponibles</h1>
         <div class="disponible">
 
             <div style="display: flex;justify-content:center;align-items: center; gap : 25px;">

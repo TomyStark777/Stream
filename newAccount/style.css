@@ -104,6 +104,17 @@ input:focus{
     background: #fff;
 }
 
+input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Cache les flèches sur Firefox */
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+
 .formDiv{
     display: flex;
     flex-direction: column;
@@ -131,4 +142,9 @@ input:focus{
     color: red;
     font-size: 12px;
     display: none;
+ }
+
+ #liste-pays{
+    width: 92%;
+    border-radius: 5px;
  }
