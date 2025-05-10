@@ -1,0 +1,158 @@
+@font-face {
+  font-family: "Finger Printed";
+  src: url(../Fonts/Finger\ Printed.ttf);
+}
+
+@font-face {
+  font-family: "AlteBold";
+  src: url(../Fonts/AlteHaasGroteskBold.ttf);
+}
+
+@font-face {
+  font-family: "AlteRegular";
+  src: url(../Fonts/AlteHaasGroteskRegular.ttf);
+}
+
+body {
+  background: linear-gradient(to left top, rgb(63, 134, 255), rgb(180, 219, 253));
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  height: 100vh;
+  background-color: #3f846c67;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  gap: 15px;
+  list-style-type: none;
+  width: 70%;
+  width: fit-content;
+}
+
+nav ul li {
+  display: flex;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: aliceblue;
+  font-family: "AlteBold";
+  font-size: 1em;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.titre {
+  font-family: "Finger Printed";
+  font-size: 35px;
+  color: rgba(101, 217, 255, 0.764);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  -webkit-user-select: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "AlteRegular";
+  background: aliceblue;
+  padding: 20px;
+  width: 80vmax;
+  margin: 0 auto;
+  margin-top: 30px;
+  border-radius: 10px;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  font-family: "AlteBold";
+}
+
+input {
+  width: 30vmax;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+  box-shadow: inset 1px 1px 1px #ccc;
+}
+
+select {
+  width: 31.5vmax;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Masquer les flèches dans Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+
+.left,
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+textarea {
+  width: 30vmax;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+  box-shadow: inset 1px 1px 1px #ccc;
+  resize: none;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  transition: background-image 0.7s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+button:hover {
+  background: linear-gradient(to bottom right, #0069d9, #7700ff);
+}
